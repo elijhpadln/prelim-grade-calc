@@ -126,7 +126,7 @@ html_template = """
 </head>
 <body>
     <div class="container">
-        <h1>📊 Prelim Grade Calculator</h1>
+        <h1>📱 Prelim Grade Calculator</h1>
 
         <!-- Input Form -->
         <form method="POST">
@@ -224,3 +224,4 @@ def calculate():
 
 if __name__ == "__main__":
     app.run(debug=True)
+

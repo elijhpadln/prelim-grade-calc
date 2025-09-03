@@ -77,6 +77,8 @@ html_template = """
         .pass { color: green; font-weight: bold; }
         .fail { color: red; font-weight: bold; }
         .deans { color: #e67e22; font-weight: bold; }
+        ul { list-style: none; padding: 0; }
+        ul li { margin: 6px 0; }
     </style>
 
     <!-- JavaScript Validation -->
@@ -125,9 +127,12 @@ html_template = """
         <div class="result">
             <p class="status">{{ result }}</p>
             {% if prelim_grade is not none %}
-                <p>📌 <b>Prelim Grade:</b> {{ prelim_grade }}</p>
-                <p>📘 <b>Midterm Grade:</b> {{ midterm_grade }}</p>
-                <p>📕 <b>Finals Grade:</b> {{ finals_grade }}</p>
+                <h3>📊 Term Grades:</h3>
+                <ul>
+                    <li>📌 <b>Prelim Grade:</b> {{ prelim_grade }}</li>
+                    <li>📘 <b>Midterm Grade:</b> {{ midterm_grade }}</li>
+                    <li>📕 <b>Finals Grade:</b> {{ finals_grade }}</li>
+                </ul>
                 <hr>
                 <p>🎯 <b>Overall Grade:</b> {{ overall_grade }}</p>
                 <p><b>Status:</b> 
@@ -217,6 +222,7 @@ def calculate():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
